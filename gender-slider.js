@@ -12,7 +12,7 @@ var FeminineMsg = "Female";
 var MasculineMsg = "Male"; 
 var NeutralMsg = "Agender";
 var FluidMsg = "Gender Fluid";
-var UnsureMsg = "Unsure";
+var UnsureMsg = "Prefer not to say";
 
 var GenderValue = 5;
 var InputType = "Slider";
@@ -20,6 +20,7 @@ var InputType = "Slider";
 function typeChange (val) {
 	//TODO: code
 	InputType = val;
+	slider.disabled = (InputType != "Slider");
 
 	if (InputType == "Slider") {
 		GenderValue = slider.value;
@@ -46,6 +47,11 @@ function updateOutput (val, outputId) {
 
 function updateMsg (val) {
 	//console.log("Updating Message");
+	var outputMsg = GetGenderString(val);
+	msgOutput.innerHTML = outputMsg;
+}
+
+function GetGenderString (val) {
 	var outputMsg;
 	if (val >= 0 && val < 3.5) {
 		outputMsg = FeminineMsg;
@@ -62,6 +68,5 @@ function updateMsg (val) {
 	else {
 		outputMsg = UnsureMsg;
 	}
-	msgOutput.innerHTML = outputMsg;
-	console.log(outputMsg);
+	return outputMsg;
 }
