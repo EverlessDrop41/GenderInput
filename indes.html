@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gender Input</title>
+</head>
+<body>
+	<h1>A non binary gender input</h1>
+	<div class="gender-input-box">
+		<input id="gender-slider" type="range" min="0" max="10" value="5" step="0.1" oninput="updateOutput(value, '#gender-slider-out')">
+		<output for="gender-slider" id="gender-slider-out">5</output>
+		<p id="gender-string">Agender</p>
+	</div>
+	<script type="text/javascript" src="gender-slider.js"></script>
+</body>
+</html>
