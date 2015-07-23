@@ -1,8 +1,9 @@
 var slider = document.getElementById('gender-slider');
 var pronounSelect = document.getElementById('pronoun-select');
 var msgOutput = document.getElementById('gender-string');
+var pronounCheckbox = document.getElementById('pronoun-a-up');
 
-pronounSelect.hasChanged = false; //Add a new property
+pronounSelect.autoUpdate = pronounCheckbox.checked; //Add a new property
 
 // Gender Values
 // < 0 - Genderfluid
@@ -21,9 +22,12 @@ var GenderValue = 5;
 var InputType = "Slider";
 var PreferedPronoun = pronounSelect.options[pronounSelect.selectedIndex].value;
 
+pronounCheckbox.onchange = function () {
+    pronounSelect.autoUpdate = pronounCheckbox.checked;
+}
+
 pronounSelect.onchange = function () {
     //console.log(pronounSelect.value);
-    pronounSelect.hasChanged = true;
     PreferedPronoun = pronounSelect.options[pronounSelect.selectedIndex].value;
 }
 
@@ -62,7 +66,7 @@ function updateMsg (val) {
 }
 
 function updatePronounSelector(GenderStr) {
-    if (!pronounSelect.hasChanged) {
+    if (pronounSelect.autoUpdate) {
         if (GenderStr == MasculineMsg) {
             pronounSelect.value = "He";
         }
