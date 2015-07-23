@@ -6,6 +6,21 @@
 <body>
 	<h1>A non binary gender input</h1>
 	<div class="gender-input-box">
+        <h2>Pronoun</h2>
+        <select name="Pronoun">
+            <optgroup label="Common">
+                <option value="He">He/Him</option>
+                <option value="She">She/Her</option>
+                <option value="They">They/Them</option>
+            </optgroup>
+            <optgroup label="Un-Common">
+                <option value="It">It</option>
+                <option value="Ne">Ne/Nem</option>
+                <option value="Ve">Ve/Ver</option>
+                <option value="Xe">Xe/Xem   </option>
+            </optgroup>
+        </select>
+        <h2>Gender</h2>
 		<input type="radio" name="select-type" value="NotSay" onclick="typeChange(value)" > Prefer not to say
 		<input type="radio" name="select-type" value="Fluid" onclick="typeChange(value)"> Genderfluid
 		<input type="radio" name="select-type" value="Slider" onclick="typeChange(value)" checked> Use slider 

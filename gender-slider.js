@@ -1,4 +1,5 @@
 var slider = document.querySelector('#gender-slider');
+var pronounSelect = document.getElementById('pronuon-select');
 var msgOutput = document.getElementById('gender-string');
 
 // Gender Values
