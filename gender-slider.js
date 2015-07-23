@@ -1,6 +1,8 @@
-var slider = document.querySelector('#gender-slider');
-var pronounSelect = document.getElementById('pronuon-select');
+var slider = document.getElementById('gender-slider');
+var pronounSelect = document.getElementById('pronoun-select');
 var msgOutput = document.getElementById('gender-string');
+
+pronounSelect.hasChanged = false; //Add a new property
 
 // Gender Values
 // < 0 - Genderfluid
@@ -17,6 +19,13 @@ var UnsureMsg = "Prefer not to say";
 
 var GenderValue = 5;
 var InputType = "Slider";
+var PreferedPronoun = pronounSelect.options[pronounSelect.selectedIndex].value;
+
+pronounSelect.onchange = function () {
+    //console.log(pronounSelect.value);
+    pronounSelect.hasChanged = true;
+    PreferedPronoun = pronounSelect.options[pronounSelect.selectedIndex].value;
+}
 
 function typeChange (val) {
 	//TODO: code
@@ -37,7 +46,7 @@ function typeChange (val) {
 }
 
 function updateOutput (val, outputId) {
-	console.log(GenderValue);
+	//console.log(GenderValue);
 	var output = document.querySelector(outputId);
 	output.value = val;
 	if (InputType == "Slider") {
@@ -47,9 +56,23 @@ function updateOutput (val, outputId) {
 }
 
 function updateMsg (val) {
-	//console.log("Updating Message");
 	var outputMsg = GetGenderString(val);
 	msgOutput.innerHTML = outputMsg;
+	updatePronounSelector(outputMsg);
+}
+
+function updatePronounSelector(GenderStr) {
+    if (!pronounSelect.hasChanged) {
+        if (GenderStr == MasculineMsg) {
+            pronounSelect.value = "He";
+        }
+        else if (GenderStr == FeminineMsg) {
+            pronounSelect.value = "She";
+        }
+        else {
+            pronounSelect.value = "They";
+        }
+    }
 }
 
 function GetGenderString (val) {
