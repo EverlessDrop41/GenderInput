@@ -2,10 +2,23 @@
 <html>
 <head>
 	<title>Gender Input</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
 	<h1>A non binary gender input</h1>
 	<div class="gender-input-box">
+        <h2>Title</h2>
+        <select name="Title" id="pronoun-select">
+            <option name="Mr">Mr</option>
+            <option name="Mrs">Mrs</option>
+            <option name="Ms">Ms</option>
+            <option name="Miss">Miss</option>
+            <option name="Mx">Mx</option>
+            <option name="Master">Master</option>
+            <option name="Doctor">Doctor (Dr.)</option>
+            <option name="Sir">Sir</option>
+        </select>
         <h2>Pronoun</h2>
         <select name="Pronoun" id="pronoun-select">
             <optgroup label="Common">
@@ -18,6 +31,9 @@
                 <option value="Ne">Ne/Nem</option>
                 <option value="Ve">Ve/Ver</option>
                 <option value="Xe">Xe/Xem</option>
+                <option value="Hir">Ze/Hir</option>
+                <option value="Zir">Ze/Zir</option>
+                <option value="Spivak">Spivak (Ey/Eir)</option>
             </optgroup>
         </select>
         Auto-update based on Gender <input type="checkbox" id="pronoun-a-up" checked/>
