@@ -29,3 +29,12 @@ Gender.prototype.toString = function () {
 	}
 	return outputMsg;
 }
+
+
+function Pronoun (subjective, objective, possessiveDeterminer, possessive, reflexive) {
+	this.subjective = subjective;
+	this.objective = objective;
+	this.possessiveDeterminer = possessiveDeterminer;
+	this.possessive = possessive;
+	this.reflexive = reflexive;
+}
