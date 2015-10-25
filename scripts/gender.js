@@ -32,6 +32,20 @@ Gender.prototype.toString = function () {
 	return outputMsg;
 }
 
+Gender.prototype.getCommonTitle = function () {
+	var msg = this.toString();
+
+	switch (msg) {
+		case Gender.FeminineMsg:
+			return "Ms";
+		case Gender.MasculineMsg:
+			return "Mr";
+		case Gender.NeutralMsg:
+		case Gender.FluidMsg:
+		case Gender.UnsureMsg:
+			return "Mx";
+	}
+}
 
 function Pronoun (subjective, objective, possessiveDeterminer, possessive, reflexive) {
 	this.subjective = subjective;
