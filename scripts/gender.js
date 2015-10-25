@@ -1,7 +1,9 @@
-//GenderJS by Tom Peregrine
+//GenderJS by Emily Peregrine
 //Started 10/08/2015 DD/MM/YYYY
-function Gender(value) {
+function Gender(value, pronoun, title) {
 	this.val = value;
+	this.pronoun = pronoun;
+	this.title = title;
 }
 
 Gender.FeminineMsg = "Female";
@@ -38,7 +40,6 @@ function Pronoun (subjective, objective, possessiveDeterminer, possessive, refle
 	this.possessive = possessive;
 	this.reflexive = reflexive;
 }
-
 
 Pronoun.He = new Pronoun("He", "Him", "His", "His", "Himself");
 Pronoun.She = new Pronoun("She", "Her", "Her", "Hers", "Herself");
